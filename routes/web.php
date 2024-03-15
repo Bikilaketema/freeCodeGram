@@ -20,9 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/p/{post}', [PostController::class, 'show']);
+
 Route::get('/p/create', [PostController::class, 'create']);
 
 Route::post('/p', [PostController::class, 'store']);
+
+Route::get('/profile/{id}/edit', [ProfileController::class, 'edit']);
 
 Route::get('/profile/{id}', [ProfileController::class, 'show']);
 
